@@ -32,5 +32,29 @@ public class EmployeeRestController {
 	public List<Employee> getEmployees() {
 		return employeeService.findAll();
 	}
+
+	//
+	@GetMapping("/cau03")
+	public List<Employee> getEmployeesluongduoi10000() {
+		return employeeService.getEmployeesByLuongDuoi10000();
+	}
+	//
+	@GetMapping("/cau08")
+	public String getEmployeesSumMokey() {
+		return "Tổng số lương phải trả cho các nhân viên: " + employeeService.getEmployeesSumMokey() + " USD";
+	}
+
+	//
+	@GetMapping("/cau09")
+	public String getEmployeesbyBoeing() {
+		
+		String str = "Mã số của các phi công lái máy báy Boeing: ";
+		List<String> list = employeeService.getEmployeesbyBoeing();
+		for (String string : list) {
+			str += "  -- "+ string;
+		}
+		
+		return str;
+	}
 	
 }

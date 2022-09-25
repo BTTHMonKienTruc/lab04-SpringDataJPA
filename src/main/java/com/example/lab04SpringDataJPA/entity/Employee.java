@@ -1,10 +1,19 @@
 package com.example.lab04SpringDataJPA.entity;
 
-import javax.persistence.Column;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +24,11 @@ public class Employee {
 	private int manv;
 	private String ten;
 	private int luong ;
+	
+	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@JoinTable(name = "CHUNGNHAN", joinColumns = {@JoinColumn(name = "manv")},
+		inverseJoinColumns = {@JoinColumn(name = "mamb")})
+	private Set<Plane> listPlane = new HashSet();
 	
 	public int getManv() {
 		return manv;
