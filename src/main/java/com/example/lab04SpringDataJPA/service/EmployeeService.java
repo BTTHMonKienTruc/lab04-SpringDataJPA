@@ -28,4 +28,13 @@ public interface EmployeeService {
 	 * @return
 	 */
 	public List<String> getEmployeesbyBoeing();
+	
+
+//	@Query(value = "SELECT nhanvien.*\r\n"
+//			+ "FROM     maybay INNER JOIN\r\n"
+//			+ "                  chungnhan ON maybay.MaMB = chungnhan.MaMB INNER JOIN\r\n"
+//			+ "                  nhanvien ON chungnhan.MaNV = nhanvien.MaNV\r\n"
+//			+ "WHERE maybay.Loai like '%747%'", nativeQuery = true)
+	public List<Employee> getEmployeesbyPlane747();
+	
 }

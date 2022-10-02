@@ -65,4 +65,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		return employeeRepository.getEmployeesbyBoeing();
 	}
+
+	@Override
+	public List<Employee> getEmployeesbyPlane747() {
+		// TODO Auto-generated method stub
+		return employeeRepository.getEmployeesbyPlane747();
+	}
+	
 }

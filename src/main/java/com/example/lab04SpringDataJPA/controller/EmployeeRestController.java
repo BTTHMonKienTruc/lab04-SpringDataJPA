@@ -56,6 +56,13 @@ public class EmployeeRestController {
 		
 		return str;
 	}
+
+	//
+	@GetMapping("/cau10")
+	public List<Employee> getEmployeesbyPlane747() {
+		
+		return employeeService.getEmployeesbyPlane747();
+	}
 	
 	
 }
